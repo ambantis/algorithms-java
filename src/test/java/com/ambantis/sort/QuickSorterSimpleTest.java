@@ -17,7 +17,7 @@ public class QuickSorterSimpleTest {
   @Test
   public void testConcatenate() {
     int[] left = {1,2,3,4};
-    int[] middle = {5};
+    int middle = 5;
     int[] right = {6,7,8,9};
     int[] sorted = {1,2,3,4,5,6,7,8,9};
     int[] actual = sorter.concatenate(left, middle, right);
@@ -27,7 +27,7 @@ public class QuickSorterSimpleTest {
 
   @Test
   public void testQsort() {
-    int[] unsorted = {3,7,8,5,2,1,9,5,4};
+    int[] unsorted = {3,7,8,6,2,1,9,5,4};
     int[] sorted = {1,2,3,4,5,6,7,8,9};
     int[] actual = sorter.qsort(unsorted);
     assertArrayEquals("Failure - {3,7,8,5,2,1,9,5,4} should be qsorted into {1,2,3,4,5,6,7,8,9} " +
