@@ -7,7 +7,16 @@ public class QuickSorterSimple {
   }
 
   public int[] concatenate(int[] left, int[] middle, int[] right) {
-    throw new UnsupportedOperationException("Not Implemented");
+    int len = left.length + middle.length + right.length;
+    int[] result = new int[len];
+    int idx = 0;
+    for (int i = 0; i < left.length; i++)
+      result[idx++] = left[i];
+    for (int i = 0; i < middle.length; i++)
+      result[idx++] = middle[i];
+    for (int i = 0; i < right.length; i++)
+      result[idx++] = right[i];
+    return result;
   }
 
   public String printArray(int[] array) {
