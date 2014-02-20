@@ -35,14 +35,6 @@ public class QuickSorterSimple {
     return concatenate(qsort(left),pivot,qsort(right));
   }
 
-  public int midpoint(int[] array) {
-    int midpoint = array.length / 2;
-    long leftValue = array[0];
-    long midValue = array[midpoint];
-    long rightValue = array[array.length-1];
-    return (int) (leftValue + midValue + rightValue) / 3;
-  }
-
   public int[] concatenate(int[] left, int middle, int[] right) {
     int len = left.length + 1 + right.length;
     int[] result = new int[len];
