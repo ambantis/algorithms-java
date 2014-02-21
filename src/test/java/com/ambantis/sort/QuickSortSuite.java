@@ -5,6 +5,7 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-  QuickSorterSimpleTest.class
+  QuickSorterSimpleTest.class,
+  QuickSorterInPlaceTest.class
 })
 public class QuickSortSuite {}
