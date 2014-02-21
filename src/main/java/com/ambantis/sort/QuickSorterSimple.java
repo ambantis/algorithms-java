@@ -1,5 +1,9 @@
 package com.ambantis.sort;
 
+import static com.ambantis.util.ArrUtils.concatenate;
+import static com.ambantis.util.ArrUtils.shrink;
+import static com.ambantis.util.ArrUtils.swap;
+
 public class QuickSorterSimple {
 
   public int[] qsort(int[] array) {
@@ -34,39 +38,4 @@ public class QuickSorterSimple {
 
     return concatenate(qsort(left),pivot,qsort(right));
   }
-
-  public int[] concatenate(int[] left, int middle, int[] right) {
-    int len = left.length + 1 + right.length;
-    int[] result = new int[len];
-    int idx = 0;
-    for (int i = 0; i < left.length; i++)
-      result[idx++] = left[i];
-    result[idx++] = middle;
-    for (int i = 0; i < right.length; i++)
-      result[idx++] = right[i];
-    return result;
-  }
-
-  public int[] shrink(int[] array, int len) {
-    int[] result = new int[len];
-    for (int i = 0; i < len; i++)
-      result[i] = array[i];
-    return result;
-  }
-
-  public String printArray(int[] array) {
-    if (array.length < 2)
-      return (array.length == 0) ? "()" : "(" + array[0] + ")";
-    StringBuilder sb = new StringBuilder();
-    sb.append("(");
-    sb.append(array[0]);
-    for (int i = 0; i < array.length-1; i++) {
-      sb.append(",");
-      sb.append(array[i]);
-    }
-    sb.append(")");
-    return sb.toString();
-  }
-
-
 }
