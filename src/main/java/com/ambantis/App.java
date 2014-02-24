@@ -13,8 +13,8 @@ public class App {
     int[] arr2 = {};
     Timer stopwatch = null;
 
-    QuickSorterInPlace inPlace = new QuickSorterInPlace();
-    QuickSorterSimple simple = new QuickSorterSimple();
+    QuickSort inPlace = new QuickSorterInPlace();
+    QuickSort simple = new QuickSorterSimple();
 
     System.out.println("About to test the performance of simple vs in-place qsort");
     System.out.println("with arrays of size=" + len);
@@ -24,9 +24,9 @@ public class App {
     for (int i = 0; i < n; i++) {
       arr = randomArr(len);
       stopwatch = new Timer();
-      arr2 = simple.qsort(arr);
+      simple.quicksort(arr);
       simpleTotalTime += stopwatch.elapsedTime();
-      if (!isSorted(arr2))
+      if (!isSorted(arr))
         throw new RuntimeException("Error: in iteration " + i + " simple qsort failed to sort array");
     }
     System.out.println("total time for simple sort for " + n + " iterations was " + simpleTotalTime);
@@ -36,7 +36,7 @@ public class App {
     for (int i = 0; i < n; i++) {
       arr = randomArr(len);
       stopwatch = new Timer();
-      inPlace.qsort(arr);
+      inPlace.quicksort(arr);
       inPlaceTotalTime += stopwatch.elapsedTime();
       if (!isSorted(arr2))
         throw new RuntimeException("Error: in iteration " + i + " in-place qsort failed to sort array");

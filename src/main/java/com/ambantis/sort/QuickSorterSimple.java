@@ -4,9 +4,15 @@ import static com.ambantis.util.ArrUtils.concatenate;
 import static com.ambantis.util.ArrUtils.shrink;
 import static com.ambantis.util.ArrUtils.swap;
 
-public class QuickSorterSimple {
+public class QuickSorterSimple implements QuickSort {
 
-  public int[] qsort(int[] array) {
+  public void quicksort(int[] data) {
+    int[] tmp = iter(data);
+    for (int i = 0; i < data.length; i++)
+      data[i] = tmp[i];
+  }
+
+  public int[] iter(int[] array) {
     if (array.length < 2)
       return array;
 
@@ -36,6 +42,6 @@ public class QuickSorterSimple {
     left = shrink(left, idxLeft);
     right = shrink(right, idxRight);
 
-    return concatenate(qsort(left),pivot,qsort(right));
+    return concatenate(iter(left),pivot,iter(right));
   }
 }

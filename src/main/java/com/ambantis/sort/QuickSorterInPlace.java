@@ -2,9 +2,9 @@ package com.ambantis.sort;
 
 import static com.ambantis.util.ArrUtils.swap;
 
-public class QuickSorterInPlace {
+public class QuickSorterInPlace implements QuickSort {
 
-  public void qsort(int[] arr) {
+  public void quicksort(int[] arr) {
     iter(arr, 0, arr.length-1);
   }
 
